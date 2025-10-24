@@ -1,9 +1,11 @@
-name: Docker Image CI
+name: CI/CD workflow
 on:
   push:
     branches: [ "main" ]
     paths-ignore:
       - 'README.md'
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
