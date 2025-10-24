@@ -6,6 +6,8 @@ on:
       - 'README.md'
 permissions:
   contents: write
+  pull-requests: write
+  packages: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,13 +41,20 @@ jobs:
       - name: Update Kubernetes manifest
         run: |
            sed -i "s|image: .*|image: $IMAGE_NAME|g" k8s/deployment.yaml
-      - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GHCR_TOKEN }}
-        run: |
-         git config user.name "github-actions[bot]"
-         git config user.email "github-actions[bot]@users.noreply.github.com"
-         git add k8s/deployment.yaml
-         git commit -m "Update image to $IMAGE_NAME [skip ci]" || echo "No changes"
-         git push
+      - name: Create Pull Request for Deployment Update
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GHCR_TOKEN }}
+          commit-message: "chore: update image"
+          branch: auto/update-image
+          title: "Auto: Update image"
+          body: |
+            This pull request updates the Kubernetes deployment file with the latest Docker image:
+            - Image: `${{ env.IMAGE_NAME }}`
+            - Triggered by commit: ${{ github.sha }}
+
+          labels: |
+            automation
+            deploy
+          delete-branch: true
     
