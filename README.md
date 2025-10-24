@@ -21,7 +21,7 @@ A modern, web-based Snake game deployed on Kubernetes with production-grade CI/C
 - [Security](#security)
 - [Future Enhancements](#future-enhancements)
 
-## 🎯 Overview
+## Overview
 
 This project demonstrates a complete DevOps workflow for deploying a simple web application (Snake Game) using modern cloud-native technologies. It showcases:
 
@@ -32,7 +32,7 @@ This project demonstrates a complete DevOps workflow for deploying a simple web 
 - **Orchestration** with Kubernetes
 - **Production-ready** configurations with security and high availability
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐
@@ -100,7 +100,7 @@ This project demonstrates a complete DevOps workflow for deploying a simple web 
 - 🔍 Health monitoring with probes
 - 🌐 Ingress configuration for external access
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - HTML5, CSS3, JavaScript
