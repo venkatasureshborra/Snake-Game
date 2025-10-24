@@ -9,7 +9,7 @@ A modern, web-based Snake game deployed on Kubernetes with production-grade CI/C
 
 ## 📋 Table of Contents
 
-- [Overview](overview)
+- [Overview](#overview)
 - [Architecture](#architecture)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -81,7 +81,7 @@ This project demonstrates a complete DevOps workflow for deploying a simple web 
 └─────────────────────────────────────────────┘
 ```
 
-## ✨ Features
+## Features
 
 ### Application Features
 - 🎮 Classic Snake game with smooth gameplay
@@ -118,7 +118,7 @@ This project demonstrates a complete DevOps workflow for deploying a simple web 
 | **Ingress Controller** | NGINX Ingress |
 | **Monitoring** | Prometheus (ready) |
 
-## 🔄 CI/CD Pipeline
+## CI/CD Pipeline
 
 ### Continuous Integration (GitHub Actions)
 
@@ -221,7 +221,7 @@ Metrics:
   - Memory: 80% threshold
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Kubernetes cluster (v1.24+)
@@ -294,7 +294,7 @@ kubectl logs -f deployment/snake-game -n snake-game
 argocd app get snake-game
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 snake-game/
@@ -320,7 +320,7 @@ snake-game/
 └── LICENSE
 ```
 
-## 📊 Monitoring & Observability
+## Monitoring & Observability
 
 ### Metrics Collection
 - Prometheus annotations configured
@@ -352,7 +352,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 # Access: https://localhost:8080
 ```
 
-## 🔐 Security
+## Security
 
 ### Implemented Security Measures
 
@@ -389,7 +389,7 @@ trivy image ghcr.io/YOUR_USERNAME/snake-game:latest
 kubesec scan kubernetes/deployment.yaml
 ```
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - [ ] Add Helm charts for easier deployment
 - [ ] Implement service mesh (Istio/Linkerd)
@@ -402,14 +402,14 @@ kubesec scan kubernetes/deployment.yaml
 - [ ] Add progressive delivery with Argo Rollouts
 - [ ] Implement cost optimization strategies
 
-## 📝 Environment Variables
+## Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `PORT` | Application port | `8080` |
 | `NODE_ENV` | Environment | `production` |
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -425,7 +425,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**Your Name**
 - GitHub: [Venkata Suresh](https://github.com/venkatasureshborra)
 - LinkedIn: [linkedin/venkatasureshborra](https://linkedin.com/in/venkatasureshborra)
 - Portfolio: [venkatasuresh](https://venkatasuresh.netlify.app)
@@ -436,13 +435,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - ArgoCD team for GitOps implementation
 - GitHub Actions for CI/CD platform
 - Open source community
-
-## 📞 Support
-
-If you have any questions or issues, please:
-- Open an issue in the repository
-- Check existing issues and discussions
-- Review the documentation
 
 ---
 
