@@ -40,6 +40,8 @@ jobs:
         run: |
            sed -i "s|image: .*|image: $IMAGE_NAME|g" k8s/deployment.yaml
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GHCR_TOKEN }}
         run: |
          git config user.name "github-actions[bot]"
          git config user.email "github-actions[bot]@users.noreply.github.com"
