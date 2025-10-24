@@ -24,7 +24,7 @@ jobs:
       - name: Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.33.1
         with:
-          image-ref: $IMAGE_NAME
+          image-ref: ghcr.io/${{ github.repository_owner }}/snakegame:latest
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
