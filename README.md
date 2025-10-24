@@ -9,7 +9,7 @@ A modern, web-based Snake game deployed on Kubernetes with production-grade CI/C
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
+- [Overview](overview)
 - [Architecture](#architecture)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
