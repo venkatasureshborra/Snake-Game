@@ -25,7 +25,8 @@ jobs:
       - name: Trivy Action
         uses: lazy-actions/gitrivy@v3
         with:
-         image: $IMAGE_NAME
+          token: ${{ secrets.GHCR_TOKEN }}
+          image: $IMAGE_NAME
 
       - name: Push image to GHCR
         run: |
