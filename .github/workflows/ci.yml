@@ -45,7 +45,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.TOKEN_GIT }}
 
       - name: Extract metadata (tags, labels)
         id: meta
@@ -90,7 +90,7 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
-          sarif_file: 'trivy-results.sarif'
+          sarif_file: 'venkat.txt'
 
       - name: Trivy scan for blocking
         uses: aquasecurity/trivy-action@0.33.1
@@ -131,7 +131,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: ${{ github.repository_owner }}/Snake-Game
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN_GIT }}
           ref: main
 
       - name: Update image tag in manifests
