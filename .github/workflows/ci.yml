@@ -93,7 +93,7 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
-          sarif_file: 'venkat.txt'
+          sarif_file: 'trivy-results.sarif'
         continue-on-error: true
 
       - name: Trivy scan for blocking
