@@ -1,4 +1,4 @@
-# 🐍 Snake Game - Cloud Native Deployment
+# 🐍 Snake Game - Cloud Native Deployment with GitOps
 
 A modern, web-based Snake game deployed on Kubernetes with production-grade CI/CD practices and GitOps workflow.
 
@@ -444,3 +444,5 @@ Made with ❤️ and ☸️
 In this project, I encountered this challenge, which helped me learn and understand how to effectively identify and prevent such issues in future workflows.
 ###
 **when code is pushed to the main branch, the workflow runs and builds a new image (e.g., with SHA abc123). It then updates the deployment.yaml file in the same repository with the new image tag and commits the change. However, that commit triggers the workflow again, which builds another image with a new SHA (def456) and repeats the same update. This creates an infinite loop of builds and commits, continuously triggering the workflow.**
+###
+**Solved by [skip ci] or skip actions**
