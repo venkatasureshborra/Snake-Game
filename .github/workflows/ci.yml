@@ -8,10 +8,16 @@ on:
       - 'README.md'
       - '.gitignore'
       - '.dockerignore'
+      - 'k8s/**'
   pull_request:
     branches: 
       - main
       - develop
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+      - '.dockerignore'
+      - 'k8s/**'
 
 env:
   REGISTRY: ghcr.io
