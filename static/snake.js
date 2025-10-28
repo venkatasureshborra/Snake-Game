@@ -8,7 +8,7 @@ let food = generateFood();
 let direction = "RIGHT";
 let score = 0;
 let highScore = 0;
-let speed = 150; // in ms
+let speed = 300; // in ms
 let gameInterval = setInterval(draw, speed);
 
 // Key press events
@@ -107,3 +107,4 @@ function restartGame(){
     food = generateFood();
     gameInterval = setInterval(draw, speed);
 }
+
