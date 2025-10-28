@@ -6,3 +6,4 @@ k8s/
 README.md
 LICENSE
 .dockerignore
+.github/
