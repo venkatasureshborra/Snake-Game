@@ -34,7 +34,7 @@ spec:
       
       containers:
       - name: snake-game
-        image: ghcr.io/venkatasureshborra/snakegame:9186f93b2f75daacefe460c6dfcfb21ace0517be
+        image: ghcr.io/venkatasureshborra/snakegame:03ff88b1fff0295bad627536ce6ee61e2283a63b
         imagePullPolicy: Always
         
         ports:
