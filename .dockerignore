@@ -2,3 +2,7 @@
 Dockerfile
 *.log
 .env
+k8s/
+README.md
+LICENSE
+.dockerignore
