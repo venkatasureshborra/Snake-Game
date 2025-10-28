@@ -144,7 +144,7 @@ jobs:
           echo "Updating image to: $NEW_IMAGE"
           
           # Update deployment.yaml
-          sed -i "s|image: ghcr.io/.*/snakegame:.*|image: $NEW_IMAGE|g" k8s/deployment.yaml
+          sed -i "s|image: ghcr.io/.*/snake.*|image: $NEW_IMAGE|g" k8s/deployment.yaml
           
           # Verify the change
           echo "Updated deployment.yaml:"
