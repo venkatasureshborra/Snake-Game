@@ -33,53 +33,7 @@ This project demonstrates a complete DevOps workflow for deploying a simple web 
 - **Production-ready** configurations with security and high availability
 
 ## Architecture
-
-```
-┌─────────────────┐
-│  Developer      │
-│  Push Code      │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────────────────────────────────┐
-│         GitHub Repository                   │
-│  ┌──────────────────────────────────────┐  │
-│  │     GitHub Actions (CI)               │  │
-│  │  • Build Docker Image                 │  │
-│  │  • Run Tests                          │  │
-│  │  • Security Scan                      │  │
-│  │  • Push to GHCR                       │  │
-│  │  • Update Manifest Repo               │  │
-│  └──────────────┬───────────────────────┘  │
-└─────────────────┼───────────────────────────┘
-                  │
-                  ▼
-         ┌─────────────────┐
-         │      GHCR       │
-         │ Container Image │
-         └─────────────────┘
-                  │
-                  ▼
-┌─────────────────────────────────────────────┐
-│         Kubernetes Cluster                  │
-│  ┌──────────────────────────────────────┐  │
-│  │        ArgoCD (CD)                    │  │
-│  │  • Monitors Git Repository            │  │
-│  │  • Syncs Kubernetes Manifests         │  │
-│  │  • Automated Deployment               │  │
-│  │  • Rollback Capabilities              │  │
-│  └──────────────┬───────────────────────┘  │
-│                 │                           │
-│                 ▼                           │
-│  ┌──────────────────────────────────────┐  │
-│  │     Snake Game Deployment            │  │
-│  │  • 3 Replicas (HA)                   │  │
-│  │  • Auto-scaling                      │  │
-│  │  • Health Checks                     │  │
-│  │  • Network Policies                  │  │
-│  └──────────────────────────────────────┘  │
-└─────────────────────────────────────────────┘
-```
+<img width="897" height="714" alt="Screenshot 2025-10-30 154248" src="https://github.com/user-attachments/assets/72fa410c-dbb2-4d80-a1f2-ff742cace0e8" />
 
 ## Features
 
@@ -301,22 +255,25 @@ snake-game/
 ├── .github/
 │   └── workflows/
 │       └── ci.yaml              # GitHub Actions CI pipeline
-├── kubernetes/
+├── k8s/
 │   ├── deployment.yaml          # K8s deployment manifest
 │   ├── service.yaml             # K8s service
 │   ├── ingress.yaml             # Ingress configuration
 │   ├── hpa.yaml                 # Horizontal Pod Autoscaler
-│   ├── pdb.yaml                 # Pod Disruption Budget
-│   └── networkpolicy.yaml       # Network policies
-├── argocd/
-│   └── application.yaml         # ArgoCD application definition
-├── src/
-│   ├── index.html               # Game HTML
-│   ├── style.css                # Styling
-│   └── game.js                  # Game logic
+│   ├── poddistbud.yaml          # Pod Disruption Budget
+│   └── networkpolicy.yaml       # Network policie
+|   └── rolebind.yaml            # Role Binding
+|   └── rbac.yaml                # RBAC file
+|   └── serviceaccount.yaml      # service account
+├── static/
+│   └── snake.js                 # Game logic
+├── templates/
+│   └── index.html               # web page
 ├── Dockerfile                   # Multi-stage Docker build
-├── .dockerignore               
-├── README.md                    # This file
+├── .dockerignore
+├── app.py                       # python file
+├── requirements.txt             # required packages
+├── README.md                   
 └── LICENSE
 ```
 
