@@ -8,6 +8,7 @@ on:
       - 'README.md'
       - '.gitignore'
       - '.dockerignore'
+      - 'k8s/**'
   pull_request:
     branches: 
       - main
