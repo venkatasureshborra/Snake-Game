@@ -37,6 +37,13 @@ spec:
           type: RuntimeDefault
       
       containers:
+      - name: nginx-exporter
+        image: nginx/nginx-prometheus-exporter:latest
+        args:
+          - -nginx.scrape-uri=http://localhost:8080/stub_status
+        ports:
+        - containerPort: 9113
+          name: metrics
       - name: snake-game
         image: ghcr.io/venkatasureshborra/snakegame:b5ada1cf4c79081618c7eb0ada41dd17cbff0c2b
         imagePullPolicy: Always
