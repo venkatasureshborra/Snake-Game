@@ -2,7 +2,7 @@ name: Cleanup GHCR Images
 
 on:
   workflow_run:
-    workflows: ["ci"]   # name of the other workflow
+    workflows: ["CI Pipeline"]   # name of the other workflow
     types:
       - completed                   # run after it completes
 
