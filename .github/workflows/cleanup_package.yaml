@@ -1,0 +1,23 @@
+name: Cleanup GHCR Images
+
+on:
+  workflow_run:
+    workflows: ["ci"]   # name of the other workflow
+    types:
+      - completed                   # run after it completes
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+
+    steps:
+      - uses: jenskeiner/ghcr-container-repository-cleanup-action@v1
+        with:
+          token: ${{ secrets.TOKEN_GIT }}
+          owner: venkatasureshborra
+          repository: Snake-Game
+          package: snakegame
+          keep-n-tagged: 6
+          dry-run: false
