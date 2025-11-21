@@ -33,7 +33,7 @@ This project demonstrates a complete DevOps workflow for deploying a simple web 
 - **Production-ready** configurations with security and high availability
 
 ## Architecture
-<img width="897" height="714" alt="Screenshot 2025-10-30 154248" src="https://github.com/user-attachments/assets/72fa410c-dbb2-4d80-a1f2-ff742cace0e8" />
+<img width="994" height="664" alt="image" src="https://github.com/user-attachments/assets/a9d1b956-9f2f-43f1-a13a-a7ac7d2d484b" />
 
 ## Features
 
@@ -269,6 +269,9 @@ snake-game/
 │   └── snake.js                 # Game logic
 ├── templates/
 │   └── index.html               # web page
+|---Monitoring/                  #monitoring config
+|   |---namespace
+|   |---custom-cofig            # Alert Manger Enable
 ├── Dockerfile                   # Multi-stage Docker build
 ├── .dockerignore
 ├── app.py                       # python file
